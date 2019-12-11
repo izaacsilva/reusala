@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class User {
 
     @Id
@@ -22,6 +23,7 @@ public class User {
     private String lastName;
     private String email;
     private String password;
+    private String gender;
     private boolean admin = false;
 
 }
