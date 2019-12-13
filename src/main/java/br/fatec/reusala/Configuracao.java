@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 // Since Spring Framework 5.0 & Java 8+
 @Configuration
-public class DateTimeFormatConfiguration implements WebMvcConfigurer {
+public class Configuracao implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {

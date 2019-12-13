@@ -6,6 +6,8 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+
 @Controller
 @RequestMapping(path = "/user")
 @Log4j2
@@ -34,5 +36,16 @@ public class UserController {
         } catch (EmptyResultDataAccessException e) {
             return String.format("User with id %d doesn't exist!", id);
         }
+    }
+
+    @GetMapping(path="/login")
+    public @ResponseBody User login(User login) {
+        if (login.getPassword() != null) {
+            User user = userRepository.findById(login.getId()).orElse(new User());
+            if (login.getPassword().equals(user.getPassword())) {
+                return user;
+            }
+        }
+        return new User();
     }
 }

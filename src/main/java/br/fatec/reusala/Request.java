@@ -24,5 +24,6 @@ public class Request {
     private LocalDateTime end;
     private int status;
     private String text;
+    private String theme;
 
 }
